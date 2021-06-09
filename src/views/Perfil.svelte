@@ -16,5 +16,6 @@
         <h1>
             Ruta protegida
         </h1>
+        <h3>{$user.displayName}</h3>
     {/if}
 </div>

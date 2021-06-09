@@ -4,23 +4,34 @@
 	import Perfil from './views/Perfil.svelte'
 	import Login from './views/Login.svelte'
 	import Navbar from './components/Navbar.svelte'
+	import {onMount} from 'svelte'
+	import {user} from './stores/User'
+
+	onMount(async() =>{
+		await user.current()
+	})
 </script>
 
-<div>
-	<h1>Hola bienvenida</h1>
-	<Router>
-		<Navbar></Navbar>
-		<Route path="/">
-			<Home></Home>
-		</Route>
-		<Route path="/perfil">
-			<Perfil></Perfil>
-		</Route>
-		<Route path="/login">
-			<Login></Login>
-		</Route>
-	</Router>
-</div>
+{#if $user === false}
+	<h1>Cargando ...</h1>
+{:else}
+	<div>
+		<h1>Hola bienvenida</h1>
+		<Router>
+			<Navbar></Navbar>
+			<Route path="/">
+				<Home></Home>
+			</Route>
+			<Route path="/perfil">
+				<Perfil></Perfil>
+			</Route>
+			<Route path="/login">
+				<Login></Login>
+			</Route>
+		</Router>
+	</div>
+{/if}
+
 
 <style>
 	

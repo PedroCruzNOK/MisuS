@@ -1,37 +1,27 @@
 <script>
     import {user} from '../stores/User'
     import {navigate} from 'svelte-routing'
+    import {auth, provider} from '../firebase'
 
-    let email =''
-    let password= ''
+ 
 
-    const procesarFormulario = () =>{   
-        if(!email.trim()|| !password.trim()){
-            console.log('campos vacios')
-            return
-        }
-        user.setUser({
-            email, password
-        })
-        navigate('/perfil', {replace:true})
+    const procesarFormulario = async () =>{     
+        try {
+            const res = await auth.signInWithPopup(provider)
+            console.log(res)
+            user.setUser(res.user)
+            navigate('/perfil', {replace: true})
+        } catch (error) {
+            console.log(error)
+        }     
+        
     }
 </script>
 
 <div>
     <h1>Acceso</h1>
-    <form on:submit|preventDefault={procesarFormulario}>
-        <input 
-            type="email"
-            placeholder="Ingresa tu correo"
-            bind:value={email}
-        >
-        <input 
-            type="password"
-            placeholder="Contraseña"
-            bind:value={password}
-        >
-        <button type="submit">
-            Acceder
-        </button>
-    </form>
+    <button type="submit" on:click={procesarFormulario}>
+        Acceder Google
+    </button>
+    
 </div>
