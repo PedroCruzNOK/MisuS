@@ -14,13 +14,15 @@
        
     }
 </script>
-
-<nav>
-    {#if $user}
-        <Link to= "/perfil">PERFIL</Link>
-        <button on:click={cerrarSesion}>Cerrar sesion</button>
-    {:else}
-        <Link to= "/">HOME</Link>
-        <Link to= "/login">LOGIN</Link>
-    {/if}
-</nav>
+<div class="container">
+    <nav>
+        {#if $user}
+            <Link to= "/perfil" class="">PERFIL</Link>
+            <Link to= "/agenda" class="">AGENDA</Link>
+            <button class="btn btn-primary" on:click={cerrarSesion}>Cerrar sesion</button>
+        {:else}
+            <Link to= "/" class="">HOME</Link>
+            <Link to= "/login" class="">LOGIN</Link>
+        {/if}
+    </nav>
+</div>
