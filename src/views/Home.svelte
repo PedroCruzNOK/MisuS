@@ -1,3 +1,7 @@
-<h1>
-    Hola bienvenido al Home
-</h1>
+<script>
+    import Navbar from '../components/Navbar.svelte'
+</script>
+
+<div class="row">
+    <Navbar />
+</div>

@@ -4,6 +4,9 @@
 	import Perfil from './views/Perfil.svelte'
 	import Login from './views/Login.svelte'
 	import Agenda from './views/Agenda.svelte'
+	import Vacaciones from './views/Vacaciones.svelte'
+	import Empleados from './views/Empleados.svelte'
+	import AjusteAnual from './views/AjusteAnual.svelte'
 	import Navbar from './components/Navbar.svelte'
 	import {onMount} from 'svelte'
 	import {user} from './stores/User'
@@ -19,9 +22,8 @@
 	<div>
 		<h1 class="display-5">Hola bienvenida</h1>
 		<Router>
-			<Navbar></Navbar>
 			<Route path="/">
-				<Home></Home>
+				<Home />		
 			</Route>
 			<Route path="/perfil">
 				<Perfil></Perfil>
@@ -31,6 +33,15 @@
 			</Route>
 			<Route path="/agenda">
 				<Agenda />
+			</Route>
+			<Route path="/vacaciones">
+				<Vacaciones />
+			</Route>
+			<Route path="/empleados">
+				<Empleados />
+			</Route>
+			<Route path="/ajuste">
+				<AjusteAnual />
 			</Route>
 		</Router>
 	</div>
