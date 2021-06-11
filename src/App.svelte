@@ -20,7 +20,7 @@
 	<h1>Cargando ...</h1>
 {:else}
 	<div>
-		<h1 class="display-5">Hola bienvenida</h1>
+		
 		<Router>
 			<Route path="/">
 				<Home />		
@@ -48,11 +48,10 @@
 {/if}
 
 
-<style>
-	
+<style global>
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
 
-	h1 {
-		color: #00bfc5;
-		
-	}
+
 </style>

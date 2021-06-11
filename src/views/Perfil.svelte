@@ -2,6 +2,7 @@
     import {user} from '../stores/User'
     import {onMount} from 'svelte'
     import {navigate} from 'svelte-routing'
+import Navbar from '../components/Navbar.svelte'
 
     console.log($user)
     onMount(() =>{
@@ -13,9 +14,6 @@
 
 <div>
     {#if $user}
-        <h1>
-            Ruta protegida
-        </h1>
-        <h3>{$user.displayName}</h3>
+        <Navbar />
     {/if}
 </div>

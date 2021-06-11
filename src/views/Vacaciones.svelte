@@ -2,6 +2,7 @@
     import {user} from '../stores/User'
     import {onMount} from 'svelte'
     import {navigate} from 'svelte-routing'
+import Navbar from '../components/Navbar.svelte'
 
     onMount(() =>{
         if(!$user){
@@ -11,6 +12,6 @@
     
 </script>
 
-<div class="container">
-    <h1>vista vacaciones</h1>
+<div class="row">
+    <Navbar />
 </div> 

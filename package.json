@@ -18,9 +18,12 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "bootstrap": "^5.0.1",
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "autoprefixer": "^10.2.6",
     "firebase": "^8.6.5",
     "sirv-cli": "^1.0.0",
-    "svelte-routing": "^1.6.0"
+    "svelte-preprocess": "^4.7.3",
+    "svelte-routing": "^1.6.0",
+    "tailwindcss": "^2.1.4"
   }
 }
