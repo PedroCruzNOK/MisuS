@@ -6,6 +6,7 @@
 	import Agenda from './views/Agenda.svelte'
 	import Vacaciones from './views/Vacaciones.svelte'
 	import Empleados from './views/Empleados.svelte'
+	import EditarEmpleados from './views/EditarEmpleados.svelte'
 	import AjusteAnual from './views/AjusteAnual.svelte'
 	import Navbar from './components/Navbar.svelte'
 	import {onMount} from 'svelte'
@@ -14,6 +15,8 @@
 	onMount(async() =>{
 		await user.current()
 	})
+	
+    
 </script>
 
 {#if $user === false}
@@ -38,7 +41,10 @@
 				<Vacaciones />
 			</Route>
 			<Route path="/empleados">
-				<Empleados />
+				<Empleados/>
+			</Route>
+			<Route path="/empleados/ver">
+				<EditarEmpleados />
 			</Route>
 			<Route path="/ajuste">
 				<AjusteAnual />
