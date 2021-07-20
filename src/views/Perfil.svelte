@@ -1,10 +1,9 @@
 <script>
-    import {user} from '../stores/User'
-    import {onMount} from 'svelte'
-    import {navigate} from 'svelte-routing'
-import Navbar from '../components/Navbar.svelte'
+import {user} from '../stores/User'
+import {onMount} from 'svelte'
+import {navigate} from 'svelte-routing'
 
-    console.log($user)
+import Tabla from '../components/Tabla.svelte'
     onMount(() =>{
         if(!$user){
             navigate('/login', {replace: true})
@@ -14,6 +13,7 @@ import Navbar from '../components/Navbar.svelte'
 
 <div>
     {#if $user}
-        <Navbar />
+        
+        <Tabla />
     {/if}
 </div>

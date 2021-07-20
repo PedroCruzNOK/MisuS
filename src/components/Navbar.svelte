@@ -98,7 +98,7 @@ import Boton from './Boton.svelte'
 
 #sidebar {
     transition: ease-in-out all .3s;
-    z-index: 9999;
+    z-index: 2;
 }
 
 #sidebar span {
