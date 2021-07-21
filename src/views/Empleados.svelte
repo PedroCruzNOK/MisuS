@@ -1,14 +1,16 @@
 <script>
-    import { user } from "../stores/User";
-    import { onMount } from "svelte";
-    import { Link, navigate } from "svelte-routing";
-    import { Datatable, rows } from "svelte-simple-datatables";
-    import Modal from "@svelte-parts/modal";
-    import Titulo from '../components/Titulo.svelte'
-    import Boton from '../components/Boton.svelte'
-    import Navbar from '../components/Navbar.svelte'
+  import { user } from "../stores/User";
+  import { onMount } from "svelte";
+  import { Link, navigate } from "svelte-routing";
+  import { Datatable, rows } from "svelte-simple-datatables";
+  import Modal from "@svelte-parts/modal";
+  import Titulo from '../components/Titulo.svelte'
+  import Boton from '../components/Boton.svelte'
+  import Navbar from '../components/Navbar.svelte'
+  import ModalEditarEmpleado from "../components/ModalEditarEmpleado.svelte";
   
     let open = false;
+   
     let row = {};
   
     onMount(() => {
@@ -44,6 +46,7 @@
       row = await response.json();
       open = true
     };
+    
   </script>
   
   <Modal {open} onClose={() => (open = false)}>
@@ -61,6 +64,9 @@
             </div>
          </div>
   </Modal>
+
+ 
+
   <Navbar />
   <div class="row">
     <div class="origin-top-right absolute right-0 mt-4 mr-5 w-30 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5" aria-labelledby="mobile-menu" role="menu">
@@ -102,7 +108,7 @@
               </td>
               <td class="centrar">
                 
-                <i class="bi bi-pencil pl-2  block py-1 md:py-3 pl-1 align-middle text-blue-500 no-underline hover:text-gray-400" on:click={getUser(row.id_empleado)} />
+                <ModalEditarEmpleado nombre = {row.nombre} aPaterno = {row.ap_paterno} fechaIngreso= {row.fechaIngreso} dependencia = {row.dependencia} puesto= {row.areaPuesto}/>
               </td>
               <td class="centrar">
                 <i class="bi bi-trash pl-2 block py-1 md:py-3 pl-1 align-middle text-red-500 no-underline hover:text-gray-400"></i>
