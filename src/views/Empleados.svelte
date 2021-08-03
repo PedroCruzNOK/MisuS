@@ -108,7 +108,7 @@
               </td>
               <td class="centrar">
                 
-                <ModalEditarEmpleado nombre = {row.nombre} aPaterno = {row.ap_paterno} fechaIngreso= {row.fechaIngreso} dependencia = {row.dependencia} puesto= {row.areaPuesto}/>
+                <ModalEditarEmpleado nombre = {row.nombre} aPaterno = {row.ap_paterno} fechaIngreso= {row.fechaIngreso} dependencia = {row.dependencia} puesto= {row.areaPuesto} id={row.id_empleado}/>
               </td>
               <td class="centrar">
                 <i class="bi bi-trash pl-2 block py-1 md:py-3 pl-1 align-middle text-red-500 no-underline hover:text-gray-400"></i>
